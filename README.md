@@ -1,5 +1,7 @@
 # Notebooklm
 
+https://notebooklm.google.com/notebook/2bbca27e-9d74-4403-8e60-fe94467759ab
+
 ## Objetivo
 
 Nesse notebook, utilizei informações obtidas por meio de links e vídeos da instituição Estratégia Concursos, com foco em computação forense, além dos meus estudos na área de cibersegurança. Também apliquei os métodos de ensino do Professor Renato da Costa como base para auxiliar e orientar o aprendizado nessa área da Tecnologia da Informação.
