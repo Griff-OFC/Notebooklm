@@ -1,339 +1,194 @@
-# Notebooklm
+# 🛡️ Guia de Estudos: Computação Forense e Cibersegurança
 
-https://notebooklm.google.com/notebook/2bbca27e-9d74-4403-8e60-fe94467759ab
+![Status](https://img.shields.io/badge/Status-Em%20Construção-green)
+![Tema](https://img.shields.io/badge/Tema-Cibersegurança-blue)
+![Tema](https://img.shields.io/badge/Tema-Forense-darkblue)
 
-## Objetivo
+> Este projeto consolida informações geradas com o auxílio do [NotebookLM](https://notebooklm.google.com/notebook/2bbca27e-9d74-4403-8e60-fe94467759ab), com foco em computação forense e cibersegurança.
 
-Nesse notebook, utilizei informações obtidas por meio de links e vídeos da instituição Estratégia Concursos, com foco em computação forense, além dos meus estudos na área de cibersegurança. Também apliquei os métodos de ensino do Professor Renato da Costa como base para auxiliar e orientar o aprendizado nessa área da Tecnologia da Informação.
+---
 
-## Fontes e links
+## 📋 Índice
 
-### Documentos
-https://www.estrategiaconcursos.com.br/curso/download/?aula=2138119
-https://www.estrategiaconcursos.com.br/curso/download/?aula=3332478
-https://www.estrategiaconcursos.com.br/curso/download/?aula=2138089
+- [Objetivo](#-objetivo)
+- [Fontes e Referências](#-fontes-e-referências)
+- [Miniguia de Estudo](#-miniguia-de-estudo)
+  - [O que é Computação Forense?](#o-que-é-computação-forense)
+  - [Processo de Investigação](#processo-básico-de-investigação-forense)
+  - [Conceitos Importantes](#conceitos-importantes)
+  - [Principais Ferramentas](#principais-ferramentas)
+  - [Principais Ameaças](#principais-ameaças)
+  - [Glossário](#glossário-de-conceitos)
+- [Q\&A: Casos Práticos](#-qa-casos-práticos)
+- [Prompts para Estudos Futuros](#-prompts-para-estudos-futuros)
 
-### Videos
+---
 
-https://www.youtube.com/live/sm4ssxyHgEY?si=CV-NCvnlIqTEel0L
-https://www.youtube.com/live/anlGdJskrUM?si=SqTg14d4eH4U3hFQ
-https://www.youtube.com/live/_qmUVgl0KXI?si=pGIATSJuWyJ2y-2Y
+## 🎯 Objetivo
 
-## Prompts para utilizar 
+Neste repositório, utilizo informações obtidas por meio de links e vídeos da instituição **Estratégia Concursos** (com foco em computação forense), além dos meus estudos pessoais na área de cibersegurança. O material também aplica os métodos de ensino do **Professor Renato da Costa** como base para auxiliar e orientar o aprendizado na área de Tecnologia da Informação.
 
-# 1- Se eu fosse um analista júnior de cibersegurança e precisasse investigar um computador suspeito pela primeira vez, quais seriam os passos básicos que eu deveria seguir para não cometer erros e conseguir identificar atividades suspeitas?
+---
 
-### Resposta
+## 📚 Fontes e Referências
 
-Como um analista júnior de cibersegurança iniciando sua primeira investigação em um computador suspeito, você deve seguir um protocolo rigoroso para garantir que as evidências sejam válidas e que a análise seja segura. Com base nas fontes, aqui estão os passos fundamentais e os sinais que você deve procurar:
+### 📄 Documentos (Estratégia Concursos)
+- [Aula 2138119](https://www.estrategiaconcursos.com.br/curso/download/?aula=2138119)
+- [Aula 3332478](https://www.estrategiaconcursos.com.br/curso/download/?aula=3332478)
+- [Aula 2138089](https://www.estrategiaconcursos.com.br/curso/download/?aula=2138089)
 
-### 1. Priorize a Coleta e a Volatilidade
-A regra de ouro é que os dados digitais podem "sumir" ou ser alterados rapidamente.
-*   **Capture dados voláteis primeiro:** Antes de desligar a máquina ou copiar arquivos, monitore o que está acontecendo na **memória RAM**, pois ataques modernos podem ser executados sem deixar rastros persistentes no disco rígido.
-*   **Preserve o estado original:** Ao coletar imagens ou vídeos da cena e dos dispositivos, utilize formatos de arquivo brutos (**RAW**), que não sofrem tratamentos e garantem que a prova seja irrefutável.
-*   **Use Atas Notariais:** Se precisar documentar conteúdos em redes sociais ou mensagens antes que sejam deletados, utilize este recurso para garantir validade jurídica.
+### 🎥 Vídeos
+- [Live 1 - Estratégia](https://www.youtube.com/live/sm4ssxyHgEY?si=CV-NCvnlIqTEel0L)
+- [Live 2 - Estratégia](https://www.youtube.com/live/anlGdJskrUM?si=SqTg14d4eH4U3hFQ)
+- [Live 3 - Estratégia](https://www.youtube.com/live/_qmUVgl0KXI?si=pGIATSJuWyJ2y-2Y)
 
-### 2. Garanta a Integridade com Funções Hash
-Para que sua investigação não seja invalidada por alegações de adulteração, você deve usar a "impressão digital" digital.
-*   **Gere o Hash imediatamente:** Assim que coletar uma evidência, aplique uma **função Hash** (como MD5 ou SHA). O Hash garante a **integridade**, provando que o dado não foi modificado, inserido ou deletado desde a sua coleta.
-*   **Cadeia de Custódia:** Mantenha registros detalhados (logs) de quem acessou a evidência e quando.
+---
 
-### 3. Monitore Atividades de Rede e Processos
-Identificar o que o computador está "falando" e "fazendo" é crucial para detectar invasores.
-*   **Detecte Sniffers:** Utilize ferramentas como **Wireshark** ou **tcpdump** para interceptar o tráfego. Um sinal de alerta é uma interface de rede operando em **modo promíscuo**, o que significa que o computador está capturando pacotes não destinados a ele (técnica de **MAC detection** pode ser usada para confirmar isso).
-*   **Verifique conexões suspeitas:** Procure por **backdoors**, softwares que abrem "portas" de conexão para que criminosos tenham controle remoto da máquina.
+## 📖 Miniguia de Estudo
 
-### 4. Exemplos Práticos de Sinais de Alerta
-Ao realizar a perícia, foque nestes itens comuns:
-*   **Arquivo Hosts alterado:** Verifique o caminho `C:\Windows\System32\drivers\etc\hosts`. Se houver redirecionamentos estranhos para endereços IP desconhecidos, a máquina é vítima de **pharming**.
-*   **Uso excessivo de recursos:** Se o computador apresentar lentidão súbita, alto consumo de CPU ou memória sem causa aparente, pode haver um **worm** se replicando ou um malware executando tarefas em segundo plano.
-*   **Processos Ocultos:** Um **rootkit** pode estar sendo usado para esconder arquivos, diretórios e conexões de rede ativos.
-
-### 5. Utilize Ambientes Seguros (Sandbox)
-**Nunca execute um arquivo ou software suspeito diretamente no sistema principal.**
-*   Utilize uma **sandbox**, que é uma área virtualizada isolada que emula uma máquina real. Nela, você pode observar o comportamento do malware sem colocar em risco a integridade do sistema operacional base ou da rede.
-
-### Erros que Você Deve Evitar
-1.  **Ignorar atualizações:** Investigar um sistema que não possui os últimos **patches de segurança** significa lidar com vulnerabilidades conhecidas que facilitam a vida do atacante.
-2.  **Não usar logs:** Deixar de analisar os **logs de eventos** impede que você saiba exatamente o que foi acessado, por quem e quando.
-3.  **Confiar apenas em antivírus:** Embora úteis, antivírus baseados em assinaturas podem não detectar ataques de **dia zero (zero-day)**, exigindo análise de comportamento e heurística.
-4.  **Extremos na Tecnologia:** Lembre-se que em TI "não existem extremos"; desconfie de regras que pareçam rígidas demais ou imutáveis.
-
-Seguindo esses passos, você transforma **dados** brutos em **informação** contextualizada, gerando o **conhecimento** necessário para um relatório final robusto.
-
-# 2-  explique como um profissional de computação forense ou cibersegurança elabora um relatório de ataque cibernético ou incidente digital. Mostre quais informações são analisadas, como as evidências são organizadas, quais etapas devem existir no relatório, como os logs e provas são documentados e apresente um exemplo simples de relatório feito por um analista iniciante.
-
-### Resposta
-
-A elaboração de um relatório de ataque cibernético ou incidente digital é um processo técnico e documental que transforma **dados brutos** em **conhecimento** acionável para decisões judiciais ou corporativas. Com base nos materiais, um profissional de cibersegurança ou computação forense segue um rito sistemático para garantir a validade das provas.
-
-Abaixo, detalho como esse relatório é estruturado e executado:
-
-### 1. Informações e Dados Analisados
-O investigador analisa diferentes camadas de dados para comprovar a **materialidade** (se o crime ocorreu) e a **autoria** (quem cometeu). As principais fontes são:
-*   **Logs de Eventos:** Registros de sistemas e aplicativos que detalham **quem acessou, o que foi acessado e quando**.
-*   **Tráfego de Rede:** Captura de pacotes (via ferramentas como **Wireshark** ou **tcpdump**) para identificar senhas em "claro" ou comunicações com servidores maliciosos.
-*   **Memória RAM e Processos:** Análise de atividades voláteis para detectar ataques modernos que não deixam rastros no disco rígido (como *malwares* em memória).
-*   **Metadados:** Informações sobre os arquivos, como autor, data de criação e formato (ex: padrão Dublin Core).
-
-### 2. Organização e Preservação das Evidências
-A organização deve seguir o princípio da **integridade**, garantindo que a prova não foi alterada.
-*   **Cadeia de Custódia e Hashes:** É indispensável o uso de **funções Hash** (resumos digitais). O Hash funciona como uma "impressão digital": qualquer alteração no arquivo altera o Hash, invalidando a prova.
-*   **Formatos Brutos (RAW):** Peritos utilizam formatos de imagem e vídeo sem tratamento (RAW) para que a evidência seja irrefutável.
-*   **Atas Notariais:** Utilizadas para documentar conteúdos voláteis (como mensagens e redes sociais) antes que o criminoso os apague.
-
-### 3. Etapas Obrigatórias do Relatório
-O relatório deve seguir um fluxo lógico similar ao ciclo de vida da informação:
-1.  **Sumário Executivo:** Visão geral do incidente (o que aconteceu e o impacto).
-2.  **Escopo e Planejamento:** Definição dos limites da investigação e metas estabelecidas.
-3.  **Metodologia e Coleta:** Descrição das ferramentas usadas e como os dados foram extraídos de forma segura.
-4.  **Análise Técnica:** Fase de "transformação", onde os dados são limpos, filtrados e correlacionados para gerar insights.
-5.  **Conclusão (Conhecimento):** Avaliação final sobre a confiabilidade e importância das provas, subsidiando a decisão do gestor ou do juiz.
-
-### 4. Documentação de Logs e Provas
-*   **Validação de Entradas e Erros:** Documentar como a aplicação reagiu a dados inesperados e se houve vazamento de informações em mensagens de erro.
-*   **Auditoria:** Incluir trilhas de auditoria que mostrem a "irretratabilidade" (não repúdio), provando que o emissor não pode negar o envio da mensagem.
-*   **Capturas de Tela:** Imagens de telas de monitoramento ou do código malicioso sendo executado.
-
-### 5. Exemplo Simples de Relatório (Analista Iniciante)
-
-> **RELATÓRIO DE INCIDENTE DIGITAL - 001/2026**
->
-> **1. Resumo:** Identificada infecção por *Ransomware* em uma estação de trabalho no setor financeiro.
->
-> **2. Evidências Coletadas:**
-> *   **Arquivo:** `fatura_fake.exe` (encontrado na pasta de downloads).
-> *   **Hash (SHA-256):** `a3b2c1...` (gerado imediatamente após a coleta).
-> *   **Log de Rede:** Registro do Wireshark mostrando conexão externa para o IP `192.168.x.x` via protocolo FTP não criptografado.
->
-> **3. Análise:** O usuário clicou em um link de *Phishing*. O malware foi carregado na memória RAM, criptografando arquivos locais e solicitando resgate em Bitcoin.
->
-> **4. Conclusão:** O incidente violou a **disponibilidade** (arquivos inacessíveis) e a **integridade** (arquivos modificados pelo vírus).
->
-> **5. Recomendações:** Aplicação de *patches* de segurança, atualização de antivírus e treinamento contra engenharia social.
-
-Este processo garante que o relatório deixe de ser apenas um "amontoado de dados" para se tornar uma peça de **conhecimento e inteligência** estratégica.
-
-# Miniguia de Estudo — Computação Forense e Cibersegurança
-
-# 1. Resumo Estruturado do Assunto
-
-## O que é Computação Forense?
-
+### O que é Computação Forense?
 A computação forense é a área da Tecnologia da Informação responsável por identificar, coletar, preservar, analisar e documentar evidências digitais relacionadas a incidentes cibernéticos, invasões, fraudes ou crimes digitais.
 
-Seu principal objetivo é:
+**Seu principal objetivo é:**
+- Descobrir o que aconteceu;
+- Identificar possíveis responsáveis;
+- Preservar provas digitais;
+- Gerar relatórios técnicos confiáveis.
+
+**Relação entre Computação Forense e Cibersegurança:**
+- **Cibersegurança atua na:** Proteção de sistemas, prevenção de ataques e monitoramento de ameaças.
+- **Computação Forense atua:** Após incidentes, durante investigações e na análise de evidências digitais.
+
+Ambas trabalham juntas para detectar ataques, entender como ocorreram e evitar novos incidentes.
+
+### Processo Básico de Investigação Forense
+
+1. **Coleta de Evidências:** O analista coleta logs, arquivos, memória RAM, conexões de rede e dispositivos. *Objetivo: preservar os dados originais sem alterações.*
+2. **Preservação da Integridade:** Uso de funções Hash, cadeia de custódia e cópias forenses. Isso garante que a prova não foi modificada.
+3. **Análise:** Identificação de atividades suspeitas, análise de malware, verificação de conexões externas e criação de *timeline* do ataque.
+4. **Documentação:** Criação de relatórios técnicos com evidências organizadas, descrição dos incidentes e recomendações de segurança.
+
+### Conceitos Importantes
+
+- **Volatilidade:** Dados que podem desaparecer rapidamente (RAM, processos ativos, conexões abertas). A memória RAM deve ser analisada primeiro.
+- **Hash:** Código único que funciona como uma "impressão digital" do arquivo. Se o arquivo mudar, o Hash também muda.
+- **Sandbox:** Ambiente isolado usado para executar malware, analisar comportamento suspeito e evitar a contaminação do sistema principal.
+- **Logs:** Registros de atividades do sistema (login, erros, conexões). São fundamentais para investigações.
+
+### Principais Ferramentas
+
+| Ferramenta | Função |
+|---|---|
+| **Wireshark** | Análise de rede |
+| **tcpdump** | Captura de pacotes |
+| **Autopsy** | Computação forense |
+| **FTK Imager** | Imagem forense |
+| **Volatility** | Análise de memória RAM |
+| **Wazuh** | Monitoramento e SIEM |
+| **VirtualBox** | Sandbox e virtualização |
+
+### Principais Ameaças
+
+| Ameaça | Descrição |
+|---|---|
+| **Malware** | Software malicioso |
+| **Ransomware** | Criptografa arquivos e pede resgate |
+| **Rootkit** | Esconde processos e arquivos no sistema |
+| **Worm** | Se replica automaticamente pela rede |
+| **Backdoor** | Permite acesso remoto oculto |
+| **Phishing** | Engenharia social para roubo de informações |
+| **Pharming** | Redirecionamento de tráfego para sites falsos |
+
+### Glossário de Conceitos
+
+| Conceito | Significado |
+|---|---|
+| **Cadeia de Custódia** | Controle cronológico e documentado das evidências |
+| **SIEM** | Plataforma de monitoramento e correlação de eventos |
+| **IOC** | Indicadores de Comprometimento (*Indicators of Compromise*) |
+| **Timeline** | Linha do tempo do ataque |
+| **Sniffer** | Ferramenta de interceptação/captura de tráfego de rede |
+| **Zero-Day** | Vulnerabilidade desconhecida pelo fabricante |
+| **Patch** | Atualização de correção de segurança |
+
+---
+
+## 🔍 Q&A: Casos Práticos
+
+<details>
+<summary><b>1. Como um analista júnior deve investigar um computador suspeito pela primeira vez?</b></summary>
+
+<br>
+
+Como um analista júnior iniciando sua primeira investigação, você deve seguir um protocolo rigoroso para garantir a validade das evidências:
+
+1. **Priorize a Coleta e a Volatilidade:** Capture dados voláteis primeiro (memória RAM). Preserve o estado original utilizando arquivos brutos (RAW). Use Atas Notariais para conteúdos voláteis em redes sociais.
+2. **Garanta a Integridade com Funções Hash:** Gere o Hash (MD5, SHA) imediatamente após a coleta para provar que a evidência não foi adulterada. Mantenha a Cadeia de Custódia.
+3. **Monitore Atividades e Processos:** Use ferramentas como Wireshark. Procure por interfaces em modo promíscuo ou portas abertas (*backdoors*).
+4. **Sinais de Alerta Comuns:** Alterações no arquivo `hosts` (sinal de pharming), uso excessivo de recursos (worms/mineradores) ou processos ocultos (rootkits).
+5. **Utilize Ambientes Seguros (Sandbox):** Nunca execute arquivos suspeitos no sistema principal.
+
+**Erros a Evitar:**
+- Ignorar atualizações (patches).
+- Não consultar logs de eventos.
+- Confiar exclusivamente no antivírus.
+- Ser extremo nas metodologias sem avaliar o contexto.
+</details>
+
+<details>
+<summary><b>2. Como elaborar um relatório de ataque cibernético ou incidente digital?</b></summary>
+
+<br>
+
+O relatório transforma dados brutos em conhecimento acionável. Deve-se analisar logs, tráfego, memória RAM e metadados, sempre preservando a integridade (Hashes, RAW).
+
+**Etapas Obrigatórias:**
+1. **Sumário Executivo:** Visão geral e impacto.
+2. **Escopo e Planejamento:** Limites da investigação.
+3. **Metodologia e Coleta:** Ferramentas e procedimentos.
+4. **Análise Técnica:** Correlação de dados e insights.
+5. **Conclusão:** Avaliação final e recomendações.
+
+**Exemplo de Relatório Simples:**
+> **RELATÓRIO DE INCIDENTE DIGITAL - 001/2026**
+> 
+> **1. Resumo:** Infecção por *Ransomware* no setor financeiro.
+> 
+> **2. Evidências:** Arquivo `fatura_fake.exe`; Hash `a3b2c1...`; Log de rede conectando via FTP a `192.168.x.x`.
+> 
+> **3. Análise:** Phishing carregado na RAM, arquivos criptografados.
+> 
+> **4. Conclusão:** Violação de disponibilidade e integridade.
+> 
+> **5. Recomendações:** Patches, atualização de AV e treinamento.
+</details>
 
-* descobrir o que aconteceu;
-* identificar possíveis responsáveis;
-* preservar provas digitais;
-* gerar relatórios técnicos confiáveis.
+---
 
-## Relação entre Computação Forense e Cibersegurança
+## 🤖 Prompts para Estudos Futuros
 
-A cibersegurança atua na:
+Você pode utilizar estes prompts no ChatGPT, NotebookLM ou outras IAs para aprofundar seus conhecimentos:
 
-* proteção de sistemas,
-* prevenção de ataques,
-* monitoramento de ameaças.
+1. **Investigação Forense:**
+   > “Explique como um analista de computação forense investigaria um computador suspeito passo a passo, mostrando ferramentas utilizadas, coleta de evidências, análise de logs e criação do relatório final.”
 
-Já a computação forense atua:
+2. **Relatório de Incidente:**
+   > “Crie um exemplo realista de relatório de incidente cibernético feito por um analista júnior, incluindo análise técnica, evidências, hashes, timeline e recomendações.”
 
-* após incidentes,
-* durante investigações,
-* na análise de evidências digitais.
+3. **Estudo de Malware:**
+   > “Explique de forma simples como funciona um ransomware, quais sinais ele deixa no sistema e como um analista pode identificar esse tipo de ataque.”
 
-As duas áreas trabalham juntas para:
+4. **Análise de Rede:**
+   > “Ensine como utilizar o Wireshark para identificar conexões suspeitas em uma rede, mostrando exemplos simples de análise de tráfego.”
 
-* detectar ataques;
-* entender como ocorreram;
-* evitar novos incidentes.
+5. **Aprendizado para Iniciantes:**
+   > “Monte um roteiro de estudos para iniciantes em computação forense e cibersegurança, incluindo conceitos básicos, ferramentas e práticas recomendadas.”
 
-# Processo Básico de Investigação Forense
+6. **Simulação de Ataque:**
+   > “Crie um cenário fictício de ataque cibernético em uma empresa e explique como um profissional de segurança investigaria o incidente.”
 
-## 1. Coleta de Evidências
+7. **Explicação de Logs:**
+   > “Explique como analisar logs do Windows e Linux para identificar atividades suspeitas em um computador comprometido.”
 
-O analista coleta:
-
-* logs;
-* arquivos;
-* memória RAM;
-* conexões de rede;
-* dispositivos.
-
-Objetivo:
-preservar os dados originais sem alterações.
-
-## 2. Preservação da Integridade
-
-Durante a coleta são utilizados:
-
-* funções Hash;
-* cadeia de custódia;
-* cópias forenses.
-
-Isso garante que a prova não foi modificada.
-
-## 3. Análise
-
-Nesta etapa o profissional:
-
-* identifica atividades suspeitas;
-* analisa malware;
-* verifica conexões externas;
-* correlaciona eventos;
-* cria timeline do ataque.
-
-## 4. Documentação
-
-O analista cria:
-
-* relatórios técnicos;
-* evidências organizadas;
-* descrição dos incidentes;
-* recomendações de segurança.
-
-# Conceitos Importantes
-
-## Volatilidade
-
-Dados que podem desaparecer rapidamente:
-
-* RAM;
-* processos ativos;
-* conexões abertas.
-
-Por isso:
-a memória RAM deve ser analisada primeiro.
-
-## Hash
-
-Código único que funciona como:
-
-> impressão digital do arquivo.
-
-Se o arquivo mudar:
-
-* o Hash muda também.
-
-## Sandbox
-
-Ambiente isolado usado para:
-
-* executar malware;
-* analisar comportamento suspeito;
-* evitar contaminação do sistema principal.
-
-## Logs
-
-Registros de atividades do sistema:
-
-* login;
-* erros;
-* conexões;
-* execução de programas.
-
-São fundamentais para investigações.
-
-# Principais Ferramentas
-
-| Ferramenta | Função                  |
-| ---------- | ----------------------- |
-| Wireshark  | Análise de rede         |
-| tcpdump    | Captura de pacotes      |
-| Autopsy    | Computação forense      |
-| FTK Imager | Imagem forense          |
-| Volatility | Análise de memória RAM  |
-| Wazuh      | Monitoramento e SIEM    |
-| VirtualBox | Sandbox e virtualização |
-
-# Principais Ameaças
-
-| Ameaça     | Descrição                          |
-| ---------- | ---------------------------------- |
-| Malware    | Software malicioso                 |
-| Ransomware | Criptografa arquivos               |
-| Rootkit    | Esconde processos e arquivos       |
-| Worm       | Se replica automaticamente         |
-| Backdoor   | Permite acesso remoto oculto       |
-| Phishing   | Roubo de informações               |
-| Pharming   | Redirecionamento para sites falsos |
-
-# Estrutura Básica de um Relatório Forense
-
-## 1. Resumo do Incidente
-
-Descrição geral do ocorrido.
-
-## 2. Evidências Coletadas
-
-* arquivos;
-* logs;
-* hashes;
-* conexões.
-
-## 3. Análise Técnica
-
-Explicação do ataque e comportamento identificado.
-
-## 4. Conclusão
-
-Impactos e resultados da investigação.
-
-## 5. Recomendações
-
-Melhorias de segurança e prevenção.
-
-# 2. Glossário de Conceitos
-
-| Conceito           | Significado                            |
-| ------------------ | -------------------------------------- |
-| Computação Forense | Investigação de evidências digitais    |
-| Cibersegurança     | Proteção de sistemas e redes           |
-| Hash               | Identificador único de arquivo         |
-| Cadeia de Custódia | Controle das evidências                |
-| Malware            | Programa malicioso                     |
-| Rootkit            | Malware que se esconde no sistema      |
-| Ransomware         | Malware que sequestra arquivos         |
-| Sandbox            | Ambiente isolado de testes             |
-| SIEM               | Plataforma de monitoramento de eventos |
-| Log                | Registro de atividade                  |
-| RAM                | Memória volátil do computador          |
-| IOC                | Indicadores de comprometimento         |
-| Timeline           | Linha do tempo do ataque               |
-| Backdoor           | Acesso oculto ao sistema               |
-| Sniffer            | Ferramenta de captura de rede          |
-| Phishing           | Golpe para roubo de dados              |
-| Pharming           | Redirecionamento para site falso       |
-| Zero-Day           | Vulnerabilidade desconhecida           |
-| Patch              | Atualização de segurança               |
-
-# 3. Prompts Reutilizáveis para Estudos Futuros
-
-## Prompt 1 — Investigação Forense
-
-> “Explique como um analista de computação forense investigaria um computador suspeito passo a passo, mostrando ferramentas utilizadas, coleta de evidências, análise de logs e criação do relatório final.”
-
-## Prompt 2 — Relatório de Incidente
-
-> “Crie um exemplo realista de relatório de incidente cibernético feito por um analista júnior, incluindo análise técnica, evidências, hashes, timeline e recomendações.”
-
-## Prompt 3 — Estudo de Malware
-
-> “Explique de forma simples como funciona um ransomware, quais sinais ele deixa no sistema e como um analista pode identificar esse tipo de ataque.”
-
-## Prompt 4 — Análise de Rede
-
-> “Ensine como utilizar o Wireshark para identificar conexões suspeitas em uma rede, mostrando exemplos simples de análise de tráfego.”
-
-## Prompt 5 — Aprendizado para Iniciantes
-
-> “Monte um roteiro de estudos para iniciantes em computação forense e cibersegurança, incluindo conceitos básicos, ferramentas e práticas recomendadas.”
-
-## Prompt 6 — Simulação de Ataque
-
-> “Crie um cenário fictício de ataque cibernético em uma empresa e explique como um profissional de segurança investigaria o incidente.”
-
-## Prompt 7 — Explicação de Logs
-
-> “Explique como analisar logs do Windows e Linux para identificar atividades suspeitas em um computador comprometido.”
+---
+*Documento otimizado para estudos de Cibersegurança e Forense.*
